@@ -1,9 +1,9 @@
 #ifndef BINARY_TREES_H
 #define BINARY_TREES_H
+
+#include <stddef.h>
 #include <stdlib.h>
 #include <limits.h>
-#include <stddef.h>
-
 
 /**
  * struct binary_tree_s - Binary tree node
@@ -19,6 +19,17 @@ struct binary_tree_s
 	struct binary_tree_s *parent;
 };
 typedef struct binary_tree_s binary_tree_t;
+
+/**
+ * struct levelorder_queue_s - Level order traversal queue.
+ * @node: A node.
+ * @next: The next node.
+ */
+typedef struct levelorder_queue_s
+{
+	binary_tree_t *node;
+	struct levelorder_queue_s *next;
+} levelorder_queue_t;
 
 
 /* Printing helper function */
